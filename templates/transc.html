@@ -1,0 +1,52 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="page-header">
+        <h1 style='text-align: center'>Bank account</h1>
+   </div>
+   <div class="container-fluid">
+    <a href="#/addaccount" class="btn btn-info btn-lg " role="button">Account</a>
+    <a href="#/transac" class="btn btn-info btn-lg " role="button">Transactions</a>
+    <a href="#/record" class="btn btn-info btn-lg " role="button">Record</a>
+      <h3>Transactions</h3>
+      <hr>
+        
+             <form class="form-horizontal" name="TranscForm" nonvalidate ng-submit='addTransc()'>
+
+           <div class="form-group">
+             <label for="txtdate" class="control-label col-md-2">Date:</label>
+                <div class="col-md-10">
+                  <input type="date" ng-model='txtdate' class="form-control" name="date" min="2016-03-08" ng-required="true" />
+                  <span ng-show='TranscForm.date.$dirty && TranscForm.date.$error.required'>Please fill out this field</span>
+                </div>
+            </div> 
+
+            <div class="form-group">
+              <label for="txtAmount" class="control-label col-md-2">Amount:</label>
+        <div class="col-md-10">
+                  <input type="number" ng-model='txtAmount' class ='form-control' name='Amount' ng-required='true'/ placeholder="How much you're going to spend">
+                  <span class="validate" ng-show="TranscForm.Amount.$invalid">Please fill out this field</span>
+        </div>
+            </div>
+
+            <div class="form-group">
+              <label for="txtMethod" class="control-label col-md-2">Method of payment:</label>
+        <div class="col-md-10">
+                  <input type="text" ng-model='txtMethod' class ='form-control' name='Method' ng-required='true' placeholder='Credit or debit'/>
+                  <span class="validate" ng-show="TranscForm.Method.$invalid">Please fill out this field</span>
+        </div>
+            </div>
+      
+       <div class="form-group">
+              <label for="txtDetail" class="control-label col-md-2">Detail:</label>
+        <div class="col-md-10">
+                  <textarea class="form-control" rows="5" name='detail' ng-model="txtDetail" ng-required='true' placeholder='Food for my dog'></textarea>
+                  <span class="validate" ng-show="TranscForm.detail.$invalid">Please fill out this field</span>
+        </div>
+
+
+            </div>
+       </form>
+         <div class="col-md-offset-9">
+           <button class="btn btn-success" id='btntransac' ng-click="addtransc()">Add</button>
+        </div>
+          <hr>
+</div>

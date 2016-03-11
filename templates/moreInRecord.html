@@ -1,0 +1,23 @@
+ <div class="col-md-6 col-md-offset-3" ng-model="transcArray">
+  
+  <div class="page-header">
+      <h3>Detail</h3>
+  </div>
+
+   <ul class="list-group">
+          <p>Id: {{whichItem}}</p>
+          <p>Date: {{ transcArray[whichItem].textDate | date }}</p>
+          <p>Amount: {{transcArray[whichItem].textAmount}}</p>
+          <p>Method of payment: {{transcArray[whichItem].textMethod}}</p>
+          <p>Detail: {{transcArray[whichItem].textDetail}}</p>
+    </ul>
+</div>
+
+ <div class="col-md-3 col-md-offset-7 detailsBtn">
+
+        <a href="#/record" class="btn btn-default" id='icontrash'ng-click="delete(whichItem)">Delete</span> 
+         </a>
+        <a href="#/record" class="btn btn-default">
+           <span class="glyphicon glyphicon-arrow-left" id='iconback'></span> 
+          </a>
+  </div>

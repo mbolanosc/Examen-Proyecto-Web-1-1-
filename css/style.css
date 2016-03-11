@@ -1,0 +1,28 @@
+*:not(.tasks-list-mark:before){
+box-sizing : border-box;
+}
+.done{text-decoration: inherit; color: #24ae90;}
+.validate{font-style: italic; color: #ccc;}
+.tiny{font-size: 10px;font-style: italic;color: #24ae90;}
+.btn a{text-decoration: none}
+
+.glyphicon{
+  font-size: 20px;
+  margin-top: 2px;
+}
+.detailsBtn{
+  margin-top: -70px;
+}
+.btn-info{
+	margin-left: 55px;
+
+}
+#btntransac{
+	margin-left: 65px;
+}
+#acountbtn{
+	margin-left: -30px;
+}
+input.ng-invalid.ng-dirty{
+	border: 1px solid red;
+}

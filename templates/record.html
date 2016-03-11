@@ -1,0 +1,43 @@
+
+<div class="col-md-6 col-md-offset-3">
+  <div class="page-header">
+          <h1 style='text-align: center'>Bank account</h1>
+   </div>
+   <div class="container-fluid">
+    <a href="#/addaccount" class="btn btn-info btn-lg " role="button">Account</a>
+    <a href="#/transac" class="btn btn-info btn-lg " role="button">Transactions</a>
+    <a href="#/record" class="btn btn-info btn-lg " role="button">Record</a>
+    <h3>Record</h3>
+   <hr>
+   
+  <p>Welcome!, here there are the last 10 transaction you made.</p>
+  <form class='form-horizontal"'>
+     <div class="form-group">
+      <label  class="control-label col-md-2">Search:</label>
+      <input type='text' class ='form-group' placeholder='By detail' ng-model='searchText'> 
+    </div>
+  </form> 
+   
+<table class="table">
+        <thead>
+        <tr>
+           <th>Date</th>
+           <th>Amount</th>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Detail</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="i in transcArray | limitTo:10 | filter: searchText | orderBy: 'textAmount'">
+           <td>{{i.textDate | date}}</td>
+           <td>{{i.textAmount}}</td>
+          <td>{{i.textMethod}}</td>
+          <td>{{i.textDetail}}</td>
+          <td>  <a href="#/record2/{{transcArray.indexOf(i)}}">More</a> </td>
+        </tr>
+        </tbody>
+      </table>
+  
+</div>
+
