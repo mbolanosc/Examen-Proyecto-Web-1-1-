@@ -9,13 +9,15 @@
       <h3>Transactions</h3>
       <hr>
         
-             <form class="form-horizontal" name="TranscForm" nonvalidate ng-submit='addTransc()'>
+             <form class="form-horizontal" name="TranscForm"  ng-submit='addTransc()' novalidate>
 
            <div class="form-group">
              <label for="txtdate" class="control-label col-md-2">Date:</label>
                 <div class="col-md-10">
                   <input type="date" ng-model='txtdate' class="form-control" name="date" min="2016-03-08" ng-required="true" />
-                  <span ng-show='TranscForm.date.$dirty && TranscForm.date.$error.required'>Please fill out this field</span>
+                   <div ng-show="TranscForm.date.$touched && TranscForm.date.$invalid">
+                    <small style='color: #C82647; text-align: center;'>Please enter the date</small>
+                 </div>
                 </div>
             </div> 
 
@@ -23,7 +25,9 @@
               <label for="txtAmount" class="control-label col-md-2">Amount:</label>
         <div class="col-md-10">
                   <input type="number" ng-model='txtAmount' class ='form-control' name='Amount' ng-required='true'/ placeholder="How much you're going to spend">
-                  <span class="validate" ng-show="TranscForm.Amount.$invalid">Please fill out this field</span>
+                  <div ng-show="TranscForm.Amount.$touched && TranscForm.Amount.$invalid">
+                    <small style='color: #C82647; text-align: center;'>Please enter the amount</small>
+                 </div>
         </div>
             </div>
 
@@ -31,7 +35,9 @@
               <label for="txtMethod" class="control-label col-md-2">Method of payment:</label>
         <div class="col-md-10">
                   <input type="text" ng-model='txtMethod' class ='form-control' name='Method' ng-required='true' placeholder='Credit or debit'/>
-                  <span class="validate" ng-show="TranscForm.Method.$invalid">Please fill out this field</span>
+                  <div ng-show="TranscForm.Method.$touched && TranscForm.Method.$invalid">
+                    <small style='color: #C82647; text-align: center;'>Please enter the method of payment</small>
+                 </div>
         </div>
             </div>
       
@@ -39,14 +45,16 @@
               <label for="txtDetail" class="control-label col-md-2">Detail:</label>
         <div class="col-md-10">
                   <textarea class="form-control" rows="5" name='detail' ng-model="txtDetail" ng-required='true' placeholder='Food for my dog'></textarea>
-                  <span class="validate" ng-show="TranscForm.detail.$invalid">Please fill out this field</span>
+                 <div ng-show="TranscForm.detail.$touched && TranscForm.detail.$invalid">
+                    <small style='color: #C82647; text-align: center;'>Please enter the detail of your transaction</small>
+                 </div>
         </div>
 
 
             </div>
        </form>
          <div class="col-md-offset-9">
-           <button class="btn btn-success" id='btntransac' ng-click="addtransc()">Add</button>
+           <button class="btn btn-success"  ng-disabled='TranscForm.$invalid' id='btntransac' ng-click="addtransc()">Add</button>
         </div>
           <hr>
 </div>

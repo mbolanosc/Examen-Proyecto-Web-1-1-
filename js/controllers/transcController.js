@@ -1,4 +1,3 @@
-//localStorage.clear();
 angular.module('transcControllers', [])
 
 /**
