@@ -14,7 +14,7 @@
   <form class='form-horizontal"'>
      <div class="form-group">
       <label  class="control-label col-md-2">Search:</label>
-      <input type='text' class ='form-group' placeholder='By detail or method' ng-model='searchText'> 
+      <input type='text' class ='form-group' placeholder='By detail and method' ng-model='searchText'> 
     </div>
     
   </form> 
@@ -31,7 +31,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="i in transcArray | limitTo:10 | filter: searchText | orderBy: 'textAmount'">
+        <tr ng-repeat="i in transcArray | limitTo:10 | filter: searchText | orderBy: 'textDate'">
            <td>{{i.textDate | date}}</td>
            <td>{{i.textAmount}}</td>
           <td>{{i.textMethod}}</td>
